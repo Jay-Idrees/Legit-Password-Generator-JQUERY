@@ -2,22 +2,28 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<title>Example of Auto Loading Bootstrap Modal on Page Load</title>
+<title>Legit Password</title>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
 <link rel="stylesheet" href="style.css" />
 
+<body>
+  
+
+
+
 <script>
-	$(document).ready(function(){
-		$("#alert_length_error").modal('show');
-	});
-</script>
+ $(document).ready(function(){
+  $("#msg_pw_length").modal('show');
+});
+
+ </script>
 </head>
 
-<!-- Welcome prompt for collecting password length  -->
+<!-- Welcome mesage for collecting password length  -->
 
-<div id="prompt_pw_length" class="modal fade">
+<div id="msg_pw_length" class="modal fade">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -28,12 +34,15 @@
             <div class="modal-body">
 				<p>Please specify the length of your desired password. <br> <br> Note that the password must at least be 8 characters long and must not exceed 128 characters. </p>
                 <form>
-                    <div class="form-group">
+                    <div class="form-group" style='align-items: center; display:flex'>
                         <!-- Will use "form-control class for DOM" -->
-                         <input type="text" class="form-control" placeholder="How long would you like your password to be?">
+                              <!-- Added pw-length id for JS DOM -->
+                         <input id='pw_length_bar' type="range" min="8" max="128" value="8" style='width: 85%; '>
+
+                         <input id="pw_length_box" type="number" class="form-control" value="8" style="width: 10.8%; margin: 1rem; ">
                     </div>
                   <div class="text-center">
-                    <button type="submit" class="btn btn-success align-center">Confirm</button>
+                    <button id='pw_length_bt' type="submit" class="btn btn-success align-center" style="cursor: pointer;">Confirm</button>
                 </div>
                 </form>
             </div>
@@ -43,7 +52,7 @@
 <!-- ==================================================== -->
 <!-- Prompt for Password characteristics -->
 
-<div id="prompt_pw_type" class="modal fade">
+<div id="msg_pw_type" class="modal fade">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -56,7 +65,7 @@
                     <!-- Check box for lowercase -->
 
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                        <input id='pw_lowercase_checkbox' class="form-check-input" type="checkbox" value="" id="defaultCheck1">
                         <label class="form-check-label" for="defaultCheck1">
                           Include lower case
                         </label>
@@ -65,7 +74,7 @@
                       <!-- Check box for the upper case -->
 
                       <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                        <input id='pw_capital_checkbox' class="form-check-input" type="checkbox" value="" id="defaultCheck1">
                         <label class="form-check-label" for="defaultCheck1">
                           Include upper case
                         </label>
@@ -74,7 +83,7 @@
                       <!-- Check box for including numbers -->
 
                       <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                        <input id='pw_number_checkbox' class="form-check-input" type="checkbox" value="" id="defaultCheck1">
                         <label class="form-check-label" for="defaultCheck1">
                           Include numbers
                         </label>
@@ -82,9 +91,9 @@
 
              <!-- Check box for including special characters -->
                       <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                        <input id='pw_symbol_checkbox' class="form-check-input" type="checkbox" value="" id="defaultCheck1">
                         <label class="form-check-label" for="defaultCheck1">
-                          Include special characters (e-g. !, @, # etc) <br> <br>
+                          Include Symbols (e-g. !, @, # etc) <br> <br>
                         </label>
                       </div>
 
@@ -108,7 +117,7 @@
 
 <!-- Length error alert, triggered if the user inputs a value <8 or >128  -->
 
-<div id="alert_length_error" class="modal fade">
+<div id="check_length" class="modal fade">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -119,7 +128,7 @@
 				<p>The password length cannot be less than 8 or more than 128 characters. <br> <br> Please click ok to re-enter a number between 8 and 128 in order to proceed. </p>
                 <form>
                   <div class="text-center">
-                    <button type="submit" class="btn btn-primary align-center">ok</button>
+                    <button id='check_length_bt' type="submit" class="btn btn-primary align-center">ok</button>
                 </div>
                 </form>
             </div>
@@ -131,7 +140,7 @@
 <!-- Non-selection alert, if the user does not select even a single characteristic -->
 
 
-<div id="alert_empty_error" class="modal fade">
+<div id="check_empty" class="modal fade">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -157,28 +166,34 @@
 
 <!-- FINAL PASSWORD GENERATOR PAGE -->
 
-<body>
-  <div class="wrapper">
-    <header>
-      <h1>Password Generator</h1>
-    </header>
-    <div class="card">
-      <div class="card-header">
-        <h2>Generate a Password</h2>
-      </div>
-      <div class="card-body">
-        <textarea
-          readonly
-          id="password"
-          placeholder="Your Secure Password"
-          aria-label="Generated Password"
-        ></textarea>
-      </div>
-      <div class="card-footer">
-        <button id="generate" class="btn">Generate Password</button>
-      </div>
+<div class="wrapper">
+  <header>
+    <h1>Password Generator</h1>
+  </header>
+
+
+  <div class="card">
+    <div class="card-header">
+      <h2>Generate a Password</h2>
+    </div>
+
+
+    <div class="card-body">
+      <textarea
+        readonly
+        id="password"
+        placeholder="Your Secure Password"
+        aria-label="Generated Password"
+      ></textarea>
+    </div>
+
+    
+    <div class="card-footer">
+      <button id="pw_display_bt" class="btn">Generate Password</button>
     </div>
   </div>
-  <script src="script.js"></script>
+</div>
 
 
+<script src="script.js"></script>
+</body>

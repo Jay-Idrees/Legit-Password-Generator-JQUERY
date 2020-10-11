@@ -1,3 +1,4 @@
+
 // Assignment Code
 // var generateBtn = document.querySelector("#generate");
 
@@ -13,68 +14,161 @@
 // // Add event listener to generate button
 // generateBtn.addEventListener("click", writePassword);
 
+      
+//=====================================================================================
+//                                JavaS DOM Plugs
+//=====================================================================================
 
-// // Generator functions 
+                                 // I N P U T S
+                          //User communitcation vectors
+
+        // pw length Message: form input box, confirm button 
+        var pw_length_bar= document.querySelectorAll('#pw_length_bar');
+        var pw_length_box= document.querySelectorAll('#pw_length_box');
+        var pw_length_bt= document.querySelectorAll('#pw_length_bt');
+
+        // length check alert: ok button
+        var check_length_bt=document.querySelectorAll('#check_length_bt');
+     
+        // Other pw characteristics modal: checkboxes x4 (uppercase, lower case, letter, number, special character), confirm button
+
+        var pw_capital_checkbox= document.querySelectorAll('#pw_capital_checkbox');
+        var pw_lowercase_checkbox=document.querySelectorAll('#pw_lowercase_checkbox')
+        var pw_number_checkbox=document.querySelectorAll('#pw_number_checkbox');
+        var pw_symbol_checkbox=document.querySelectorAll('#pw_symbol_checkbox');
+        
+                                 // O U T P U T S    
+
+         // Final password generator page: Generate button, Display textarea
+         var pw_gen_bt=document.querySelectorAll('#pw_gen_bt')
+         var pw_display_area=document.querySelectorAll("#password")
+//=====================================================================
+
+// Variables for passwoed ingredients
+
+   var abc_lower='abcdefghijklmnopqrstuvwxyz'
+
+   var abc_upper='ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+
+   var number='0123456789'
+
+   var symbol='!@#$%^&*'
 
 
-//DOM Elements
-const resultEL=document.querySelectorAll('result')
-const lengthEL=document.querySelectorAll('length')
-const uppercaseEL=document.querySelectorAll('uppercase')
-const lowercaseEL=document.querySelectorAll('lowercase')
-const numbersEL=document.querySelectorAll('numbers')
-const symbolsEL=document.querySelectorAll('symbols')
-const generateEL=document.querySelectorAll('generate')
-const clipboardEL=document.querySelectorAll('clipboard')
 
-Const randomFunc={
-  lower: getRandomLower,
-  upper: getRandomUpper,
-  number: getRandomNumber,
-  symbol: getRandomSymbol
-// get this from alerts and turn into a variable
-};
+//=====================================================================================
+//                                   Functions 
+//=====================================================================================
 
-generateEL.addEventlistener('click', (){
-  //Obtain the length of the password (+) specifies that its a number
-  const length= +lengthEL.value;
-  const hasLower=lowercaseEL.checked
-  const hasUpper=lowercaseEL.checked
-  const hasNumber=numbersEL.checked
-  const hasSymbol=symbolsEL.checked
-  resultEL.innerText=generatePassword(hasLower, hasUpper, hasNumber, hasSymbol, length)
-  
-});
+        // Generate password function
 
-//Generator functions
-//Generating random lower case letters
-function getRandomLower(){
-  // 26 represents the english letters, 97 represents the number corresponding with lower case starting with 'a' returing a string
-return String.fromCharCode(Math.floor(Math.random()*26)+97);
-}
+        function create_pw(length, pw_ingredients){
+          var password=''
+          for (var i=0;i<length;i++){
+            password += pw_ingredients.charAt(Math.floor(Math.random)*pw_ingredients*length)
+          }
+
+        }
 
 
-//Generating random upper case letters
-function getRandomUpper(){
-    // 26 represents the english letters, 65 represents the number corresponding with lower case starting with 'A' returing a string
-return String.fromCharCode(Math.floor(Math.random()*26)+65);
-  }
+//=====================================================================================
+//                               Event Sequence
+//=====================================================================================
 
-//Generating random numbers 
-function getRandomNumber(){
-// Obtaining a random number between 0 and 9 from HTML characterset
-return String.fromCharCode(Math.floor(Math.random()*10)+48);
-    }
-  
-    // Generating random symbols
-function getRandomSymbol(){
-      // Obtaining a random number between 0 and 9 from HTML characterset
-return String.fromCharCode(Math.floor(Math.random()*10)+33);
-      // //Alternative 
-      // const symbols='!@#$%^&*(){}[]+<>/,.';
-      // return symbols[Math.floor(Math.random()*symbols.length)]
-      }
-    
 
-//Console loging to check how the functions are working
-console.log(getRandomSymbol());
+ // Prompt Welcome modal 
+   
+// Trigger 2nd modal for checkboxes regarding other pw characteristics
+
+// Checking that at least one of the checkboxes is checked, trigger alert if not
+
+// Display the password generator window
+
+// Trigering the password generation episode with the click of generate password button
+
+pw_gen_bt.addEventlistener('click', function(event){
+   
+  var pw_ingredients='';
+
+// Pouring lower case letters to ingredients variable
+
+  (pw_lowercase_checkbox.checked) ? pw_ingredients +=abc_lower : '';
+
+//Pouring upper case letters to the ingredients variable
+
+  (pw_capital_checkbox.checked) ? pw_ingredients +=abc_upper : '';
+
+// Pouring numbers to the ingredients variable
+
+  (pw_number_checkbox.checked) ? pw_ingredients +=number : '';
+
+  // pouring symbols to the ingredients variable
+
+  (pw_symbol_checkbox.checked) ? pw_ingredients +=symbol :'';
+
+  // running the create password function to generate password and then displaying the value
+
+  pw_display_area.value = create_pw(pw_length_box.value, pw_ingredients)
+
+ });
+
+
+
+       // Check whether the password is beteen 8 and 128 characters
+
+
+      //  // create random lower case letter
+      //       function get_rdm_lower(){
+      //       // 26 represents the english letters, 97 represents the number corresponding with lower case starting with 'a' returing a string
+      //       return String.fromCharCode(Math.floor(Math.random()*26)+97);
+            
+      //       }
+
+      //  // create random upper case letter
+      //      function  get_rdm_upper(){
+      //       // 26 represents the english letters, 65 represents the number corresponding with lower case starting with 'A' returing a string
+      //       return String.fromCharCode(Math.floor(Math.random()*26)+65);
+      //       }
+
+      //   // Create random number between 0 and 9
+      //       function  get_rdm_num(){
+      //       // Obtaining a random number between 0 and 9 from HTML characterset
+      //       return String.fromCharCode(Math.floor(Math.random()*10)+48);
+      //        }
+      //        console.log(create_rdm_num)
+
+      //   // Create special character
+      //       function get_rdm_symbol(){
+      //         return String.fromCharCode(Math.floor(Math.random()*10)+33);
+      //         // //Alternative 
+      //         // const symbols='!@#$%^&*(){}[]+<>/,.';
+      //         // return symbols[Math.floor(Math.random()*symbols.length)]
+      //        }
+
+      //   // Create password : 
+      //         create_pw(){
+      //           // get these randomly generated ingreadients for the password
+      //           // pack them into a body that is the size of length variable
+
+      //         }
+
+
+
+
+
+
+      // Link range bar to the text box in welcome window
+        // var bar_value=pw_length_bar.value
+        // pw_length_box.textContent=bar_value
+      
+
+  //  pw_length_bar.addEventlistener('change', link)
+  //     pw_length_box.addEventlistener('change', link)
+
+  //           function link(e){
+  //             const value = e.target.value
+  //             pw_length_bar.value = value
+  //             pw_length_box.value = value
+  //           }
+
+        
