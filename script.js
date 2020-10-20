@@ -23,25 +23,30 @@
                           //User communitcation vectors
 
         // pw length Message: form input box, confirm button 
-        var pw_length_bar= document.querySelectorAll('#pw_length_bar');
-        var pw_length_box= document.querySelectorAll('#pw_length_box');
-        var pw_length_bt= document.querySelectorAll('#pw_length_bt');
+        var pw_length_bar= document.querySelector('#pw_length_bar');
+        // var pw_length_box= document.querySelectorAll('#pw_length_box');
+       
+        var pw_length_box= document.querySelector('#pw_length_box')
+        var pw_length=pw_length_box.value
+       
+ 
+        var pw_length_bt= document.querySelector('#pw_length_bt');
 
         // length check alert: ok button
-        var check_length_bt=document.querySelectorAll('#check_length_bt');
+        var check_length_bt=document.querySelector('#check_length_bt');
      
         // Other pw characteristics modal: checkboxes x4 (uppercase, lower case, letter, number, special character), confirm button
 
-        var pw_capital_checkbox= document.querySelectorAll('#pw_capital_checkbox');
-        var pw_lowercase_checkbox=document.querySelectorAll('#pw_lowercase_checkbox')
-        var pw_number_checkbox=document.querySelectorAll('#pw_number_checkbox');
-        var pw_symbol_checkbox=document.querySelectorAll('#pw_symbol_checkbox');
+        var pw_capital_checkbox= document.querySelector('#pw_capital_checkbox');
+        var pw_lowercase_checkbox=document.querySelector('#pw_lowercase_checkbox')
+        var pw_number_checkbox=document.querySelector('#pw_number_checkbox');
+        var pw_symbol_checkbox=document.querySelector('#pw_symbol_checkbox');
         
                                  // O U T P U T S    
 
          // Final password generator page: Generate button, Display textarea
-         var pw_gen_bt=document.querySelectorAll('#pw_gen_bt')
-         var pw_display_area=document.querySelectorAll("#password")
+         var pw_gen_bt=document.querySelector('#pw_gen_bt')
+         var pw_display_area=document.querySelector("#password")
 //=====================================================================
 
 // Variables for passwoed ingredients
@@ -57,18 +62,46 @@
 
 
 //=====================================================================================
-//                                   Functions 
+//                                   Click Events 
 //=====================================================================================
 
-        // Generate password function
+        $(document).ready(function(){
+          $("#msg_pw_length").modal('show');
+          console.log('hi')
+        });
 
-        function create_pw(length, pw_ingredients){
-          var password=''
-          for (var i=0;i<length;i++){
-            password += pw_ingredients.charAt(Math.floor(Math.random)*pw_ingredients*length)
-          }
+   
+        // Controling the display of the modals
+            $("#pw_length_bt").click(function(){
+              event.preventDefault();
+              $("#msg_pw_length").modal('hide');
+              $("#msg_pw_type").modal('show');
+              // load_secondmodal()
+              console.log('hi3')
+            });
+   
+       // 
+            $("#pw_ingredients_bt").click(function(){
+              event.preventDefault();
+              $("#msg_pw_type").modal('hide');
+              $("#pw_gen_page").modal('show');
+              // load_secondmodal()
+              console.log('hi3')
+            });
 
-        }
+
+            //Alternative for controling modals with a function
+
+                 // function load_secondmodal(){
+        //   $('#msg_pw_length').modal('hide')
+        //   console.log('hi2')
+        //   $('#msg_pw_type').modal('show')
+        // }
+
+          // $(document).ready(function(){
+          //   $("#pw_length_bt").on("click", load_secondmodal)
+          // })
+
 
 
 //=====================================================================================
@@ -86,31 +119,62 @@
 
 // Trigering the password generation episode with the click of generate password button
 
-pw_gen_bt.addEventlistener('click', function(event){
-   
+
+        // Generate password function
+
+        function create_pw(pw_length, pw_ingredients){
+
+          var password=''
+
+          for (var i=0;i<pw_length;i++){
+
+          password += pw_ingredients.charAt(Math.floor(Math.random() *pw_ingredients.pw_length));
+          } //br close loop
+
+        } //br-close create_pw function
+
+
+
+
+$('#pw_gen_bt').click(function(e){
+
+
   var pw_ingredients='';
 
-// Pouring lower case letters to ingredients variable
+  // Pouring lower case letters to ingredients variable
+  
+    (pw_lowercase_checkbox.checked) ? pw_ingredients +=abc_lower : '';
+  
+  //Pouring upper case letters to the ingredients variable
+  
+    (pw_capital_checkbox.checked) ? pw_ingredients +=abc_upper : '';
+  
+  // Pouring numbers to the ingredients variable
+  
+    (pw_number_checkbox.checked) ? pw_ingredients +=number : '';
+  
+    // pouring symbols to the ingredients variable
+  
+    (pw_symbol_checkbox.checked) ? pw_ingredients +=symbol :'';
+  
+    // running the create password function to generate password and then displaying the value
 
-  (pw_lowercase_checkbox.checked) ? pw_ingredients +=abc_lower : '';
+     finalpw= create_pw(pw_length, pw_ingredients)
+     console.log('checking DOM variable value', pw_length)
+     console.log('final pw',finalpw)
+  
+  //  x= create_pw(pw_length, pw_ingredients)
+  //   console.log('pw value', x)
 
-//Pouring upper case letters to the ingredients variable
+    // pw_display_area.value 
 
-  (pw_capital_checkbox.checked) ? pw_ingredients +=abc_upper : '';
 
-// Pouring numbers to the ingredients variable
+});
 
-  (pw_number_checkbox.checked) ? pw_ingredients +=number : '';
 
-  // pouring symbols to the ingredients variable
 
-  (pw_symbol_checkbox.checked) ? pw_ingredients +=symbol :'';
 
-  // running the create password function to generate password and then displaying the value
 
-  pw_display_area.value = create_pw(pw_length_box.value, pw_ingredients)
-
- });
 
 
 
@@ -153,22 +217,31 @@ pw_gen_bt.addEventlistener('click', function(event){
       //         }
 
 
-
-
-
-
-      // Link range bar to the text box in welcome window
-        // var bar_value=pw_length_bar.value
-        // pw_length_box.textContent=bar_value
       
 
-  //  pw_length_bar.addEventlistener('change', link)
-  //     pw_length_box.addEventlistener('change', link)
 
-  //           function link(e){
-  //             const value = e.target.value
-  //             pw_length_bar.value = value
-  //             pw_length_box.value = value
-  //           }
+
+     // Link range bar to the text box in welcome window
+
+    //  $('#element_id').change(function() {
+    //   // your logic
+    // });
+
+    pw_length_bar.addEventListener('input', link );
+
+    pw_length_box.addEventListener('input', link);
+
+
+
+            function link(e){
+              var value = e.target.value
+              pw_length_bar.value = value
+              pw_length_box.value = value
+            }
+
+            
+        // var bar_value=pw_length_bar.value
+        // pw_length_box.textContent=bar_value
+
 
         

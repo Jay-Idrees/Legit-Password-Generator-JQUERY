@@ -13,12 +13,12 @@
 
 
 
-<script>
+<!-- <script>
  $(document).ready(function(){
   $("#msg_pw_length").modal('show');
 });
 
- </script>
+ </script> -->
 </head>
 
 <!-- Welcome mesage for collecting password length  -->
@@ -39,10 +39,12 @@
                               <!-- Added pw-length id for JS DOM -->
                          <input id='pw_length_bar' type="range" min="8" max="128" value="8" style='width: 85%; '>
 
-                         <input id="pw_length_box" type="number" class="form-control" value="8" style="width: 10.8%; margin: 1rem; ">
+                         <input id="pw_length_box" type="number" class="form-control" min="8" max="128" value="8" style="width: 15%; margin: 1rem; ">
                     </div>
                   <div class="text-center">
+
                     <button id='pw_length_bt' type="submit" class="btn btn-success align-center" style="cursor: pointer;">Confirm</button>
+                    
                 </div>
                 </form>
             </div>
@@ -52,7 +54,7 @@
 <!-- ==================================================== -->
 <!-- Prompt for Password characteristics -->
 
-<div id="msg_pw_type" class="modal fade">
+<div id="msg_pw_type" class="modal fade" >
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -98,8 +100,8 @@
                       </div>
 
 
-                  <div class="text-center">
-                    <button type="submit" class="btn btn-success align-center">Confirm</button>
+                  <div id='pw_ingredients_bt' class="text-center">
+                    <button type="submit" class="btn btn-success align-center " >Confirm</button>
                 </div>
                 </form>
             </div>
@@ -114,27 +116,6 @@
 
 <!-- =================================================== -->
 
-
-<!-- Length error alert, triggered if the user inputs a value <8 or >128  -->
-
-<div id="check_length" class="modal fade">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h3 class="modal-title, text-center" style='color: darkblue;'>Unable to proceed</h3>
-                <button style='display: none;' type="button" class="close" data-dismiss="modal">&times;</button>
-            </div>
-            <div class="modal-body">
-				<p>The password length cannot be less than 8 or more than 128 characters. <br> <br> Please click ok to re-enter a number between 8 and 128 in order to proceed. </p>
-                <form>
-                  <div class="text-center">
-                    <button id='check_length_bt' type="submit" class="btn btn-primary align-center">ok</button>
-                </div>
-                </form>
-            </div>
-        </div>
-    </div>
-</div> 
 
 
 <!-- Non-selection alert, if the user does not select even a single characteristic -->
@@ -166,7 +147,7 @@
 
 <!-- FINAL PASSWORD GENERATOR PAGE -->
 
-<div class="wrapper">
+<div id="pw_gen_page" class="wrapper" data-backdrop="false">
   <header>
     <h1>Password Generator</h1>
   </header>
@@ -189,7 +170,7 @@
 
     
     <div class="card-footer">
-      <button id="pw_display_bt" class="btn">Generate Password</button>
+      <button id="pw_gen_bt" class="btn">Generate Password</button>
     </div>
   </div>
 </div>
