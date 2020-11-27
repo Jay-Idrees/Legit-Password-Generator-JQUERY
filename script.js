@@ -132,6 +132,7 @@
           password += pw_ingredients.charAt(Math.floor(Math.random() * pw_ingredients.length));
 
           console.log('The final passwod is: ',password)
+          $('#password').addClass('text-success font-weight-bold')
           $('#password').val(password)
           } //br close loop
           return password
