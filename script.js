@@ -39,15 +39,13 @@
         var pw_symbol_checkbox=document.querySelector('#pw_symbol_checkbox');
         var pw_ingredients_bt=document.querySelector('#pw_ingredients_bt')
 
-
-
         
                                  // O U T P U T S    
 
          // Final password generator page: Generate button, Display textarea
          var pw_gen_bt=document.querySelector('#pw_gen_bt')
          var pw_display_area=document.querySelector("#password")
-         // For copying the password
+        // DOM element for pluggin into the copy button for copy password to the clipboard functionality
          var clipboard=document.querySelector('#clipboard')
 //=====================================================================
 
@@ -178,8 +176,22 @@
             }
 
     
-          
-         
+        
+            clipboard.addEventListener('click', () => {
+              // console.log('click working')
+              const copy_password = pw_display_area.value;
+              // console.log(password)
+              
+              if(!copy_password) { return; }
+              
+              // pw_display_area.value = password;
+              // document.body.appendChild(pw_display_area);
+              pw_display_area.select();
+              document.execCommand('copy');
+              alert("Your password has been copied")
+              // textarea.remove();
+              console.log(" The Password '", copy_password, "' has been copied to clipboard");
+            });  
           
         
 //Alternative for controling modals with a function
