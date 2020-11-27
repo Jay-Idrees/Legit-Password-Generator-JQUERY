@@ -21,14 +21,15 @@
  </script> -->
 </head>
 
-<!-- Welcome mesage for collecting password length  -->
+<!-- Welcome mesage. MODAL 1 for collecting  PW length -->
+<!-- DOM: text box and confirm button -->
 
 <div id="msg_pw_length" class="modal fade">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
                 <h3 class="modal-title, text-center" style='color: darkblue;'>Welcome to Legit Password Generator</h3>
-              <!-- Added display none to eliminate close button -->
+              <!-- Added display none to eliminate close button. As I do not want the user to click out -->
                 <button style='display: none;' type="button" class="close" data-dismiss="modal">&times;</button>
             </div>
             <div class="modal-body">
@@ -52,7 +53,7 @@
     </div>
 </div> 
 <!-- ==================================================== -->
-<!-- Prompt for Password characteristics -->
+<!-- Modal 2 for Password characteristics -->
 
 <div id="msg_pw_type" class="modal fade" >
     <div class="modal-dialog">
@@ -62,7 +63,7 @@
                 <button style='display: none;' type="button" class="close" data-dismiss="modal">&times;</button>
             </div>
             <div class="modal-body">
-				<p> Which of the following characteristics would you like to include in your password? <br> <br> You can select as many options as you like from the list below. <br> <br> </p>
+				<p> Which of the following characteristics would you like your password to include? <br> <br> You can select as many options as you like from the list below. <br> <br> </p>
                 <form>
                     <!-- Check box for lowercase -->
 

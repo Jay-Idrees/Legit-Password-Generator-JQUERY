@@ -27,13 +27,9 @@
         // var pw_length_box= document.querySelectorAll('#pw_length_box');
        
         var pw_length_box= document.querySelector('#pw_length_box')
-        var pw_length=pw_length_box.value
-       
+     
  
         var pw_length_bt= document.querySelector('#pw_length_bt');
-
-        // length check alert: ok button
-        var check_length_bt=document.querySelector('#check_length_bt');
      
         // Other pw characteristics modal: checkboxes x4 (uppercase, lower case, letter, number, special character), confirm button
 
@@ -41,6 +37,8 @@
         var pw_lowercase_checkbox=document.querySelector('#pw_lowercase_checkbox')
         var pw_number_checkbox=document.querySelector('#pw_number_checkbox');
         var pw_symbol_checkbox=document.querySelector('#pw_symbol_checkbox');
+        var pw_ingredients_bt=document.querySelector('#pw_ingredients_bt')
+
         
                                  // O U T P U T S    
 
@@ -49,15 +47,8 @@
          var pw_display_area=document.querySelector("#password")
 //=====================================================================
 
-// Variables for passwoed ingredients
+// Variables for password ingredients
 
-   var abc_lower='abcdefghijklmnopqrstuvwxyz'
-
-   var abc_upper='ABCDEFGHIJKLMNOPQRSTUVWXYZ'
-
-   var number='0123456789'
-
-   var symbol='!@#$%^&*'
 
 
 
@@ -74,21 +65,52 @@
         // Controling the display of the modals
             $("#pw_length_bt").click(function(){
               event.preventDefault();
+             let pw_length= $('#pw_length_box').val();
               $("#msg_pw_length").modal('hide');
               $("#msg_pw_type").modal('show');
+              
               // load_secondmodal()
-              console.log('hi3')
+    
             });
    
        // 
             $("#pw_ingredients_bt").click(function(){
               event.preventDefault();
-              $("#msg_pw_type").modal('hide');
-              $("#pw_gen_page").modal('show');
-              // load_secondmodal()
-              console.log('hi3')
-            });
 
+              //  here ----------------------------
+              var abc_lower='abcdefghijklmnopqrstuvwxyz'
+
+              var abc_upper='ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+
+              var number='0123456789'
+
+              var symbol='!@#$%^&*'
+
+             
+
+            
+
+     // Link range bar to the text box in welcome window
+
+
+    pw_length_bar.addEventListener('input', link );
+
+    pw_length_box.addEventListener('input', link);
+
+
+
+            function link(e){
+              var value = e.target.value
+              pw_length_bar.value = value
+              pw_length_box.value = value
+            }
+
+            
+        // var bar_value=pw_length_bar.value
+        // pw_length_box.textContent=bar_value
+
+
+        
 
             //Alternative for controling modals with a function
 
@@ -117,27 +139,16 @@
 
 // Display the password generator window
 
-// Trigering the password generation episode with the click of generate password button
+// Trigering the password generation episode on clicking the generate password button
 
 
-        // Generate password function
-
-        function create_pw(pw_length, pw_ingredients){
-
-          var password=''
-
-          for (var i=0;i<pw_length;i++){
-
-          password += pw_ingredients.charAt(Math.floor(Math.random() *pw_ingredients.pw_length));
-          } //br close loop
-
-        } //br-close create_pw function
-
+  
 
 
 
 $('#pw_gen_bt').click(function(e){
 
+  var pw_length=pw_length_box.value
 
   var pw_ingredients='';
 
@@ -219,29 +230,3 @@ $('#pw_gen_bt').click(function(e){
 
       
 
-
-
-     // Link range bar to the text box in welcome window
-
-    //  $('#element_id').change(function() {
-    //   // your logic
-    // });
-
-    pw_length_bar.addEventListener('input', link );
-
-    pw_length_box.addEventListener('input', link);
-
-
-
-            function link(e){
-              var value = e.target.value
-              pw_length_bar.value = value
-              pw_length_box.value = value
-            }
-
-            
-        // var bar_value=pw_length_bar.value
-        // pw_length_box.textContent=bar_value
-
-
-        
