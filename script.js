@@ -64,7 +64,7 @@
 
    
         // Controling the display of the modals
-            $("#pw_length_bt").click(function(){
+            $("#pw_length_bt").click(function(event){
               event.preventDefault();
              let pw_length= $('#pw_length_box').val();
               $("#msg_pw_length").modal('hide');
@@ -75,7 +75,7 @@
             });
    
        
-            $("#pw_ingredients_bt").click(function(){
+            $("#pw_ingredients_bt").click(function(event){
               event.preventDefault();
               ('#password').empty
 
@@ -133,7 +133,7 @@
             }); // br close for the pw_ingreadients_button click event
 
 // Added Functionality to bring the user back to the password ingredients/type modal page after the ok button is clicked in the empty option error alert
-            $("#to_pw_ingredients_msg").click(function(){
+            $("#to_pw_ingredients_msg").click(function(event){
               event.preventDefault();
               $("#check_empty").modal('hide');
               $("#msg_pw_type").modal('show');
@@ -165,7 +165,7 @@
 
 
         // Controling the display of the modals
-        $("#pw_gen_bt").click(function(){
+        $("#pw_gen_bt").click(function(event){
           event.preventDefault();
           $("#msg_pw_length").modal('show');
 
@@ -196,7 +196,7 @@
  
 
 
-        $("#to_main_page").click(function(){
+        $("#to_main_page").click(function(event){
           event.preventDefault();
           $("#msg_pw_copied").modal('hide');
           $("#pw_gen_page").modal('show');
@@ -211,8 +211,8 @@
 
 
 
-            function link(e){
-              var value = e.target.value
+            function link(event){
+              var value = event.target.value
               pw_length_bar.value = value
               pw_length_box.value = value
             }
