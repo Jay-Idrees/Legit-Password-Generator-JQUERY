@@ -87,7 +87,30 @@
               var symbol='!@#$%^&*'
               var pw_length=pw_length_box.value
 
-        
+              var pw_ingredients='';
+            
+              // Pouring lower case letters to ingredients variable
+              
+                (pw_lowercase_checkbox.checked) ? pw_ingredients +=abc_lower : '';
+
+              // Pouring upper case letters to the ingredients variable
+              
+                (pw_capital_checkbox.checked) ? pw_ingredients +=abc_upper : '';
+              
+              // Pouring numbers to the ingredients variable
+              
+                (pw_number_checkbox.checked) ? pw_ingredients +=number : '';
+              
+                // pouring symbols to the ingredients variable
+              
+                (pw_symbol_checkbox.checked) ? pw_ingredients +=symbol :'';
+              
+                // running the create password function to generate password and then displaying the value
+                
+               
+             
+
+            
 
      // Link range bar to the text box in welcome window
 
