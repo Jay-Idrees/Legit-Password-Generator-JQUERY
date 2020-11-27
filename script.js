@@ -177,8 +177,17 @@
 
         });  
       
-            
 
+           
+ 
+
+
+        $("#to_main_page").click(function(){
+          event.preventDefault();
+          $("#msg_pw_copied").modal('hide');
+          $("#pw_gen_page").modal('show');
+            
+        });
      // Linking range bar to the text box in welcome window
 
 
