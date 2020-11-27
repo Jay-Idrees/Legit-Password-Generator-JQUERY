@@ -58,7 +58,6 @@
 
         $(document).ready(function(){
           $("#msg_pw_length").modal('show');
-          console.log('hi')
         });
 
    
@@ -140,6 +139,18 @@
 
         } //br-close create_pw function
                  
+
+
+
+        // Controling the display of the modals
+        $("#pw_gen_bt").click(function(){
+          event.preventDefault();
+          $("#msg_pw_length").modal('show');
+          
+          // load_secondmodal()
+
+        });
+
 
             
 
