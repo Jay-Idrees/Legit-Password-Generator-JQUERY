@@ -60,6 +60,7 @@
 
         $(document).ready(function(){
           $("#msg_pw_length").modal('show');
+          $("#clipboard").hide();
         });
 
    
@@ -125,6 +126,7 @@
           create_pw(pw_length, pw_ingredients)
 
               $("#msg_pw_type").modal('hide');
+              $("#clipboard").show();
               $("#pw_gen_page").modal('show');
           
         } //br close if/else statement
