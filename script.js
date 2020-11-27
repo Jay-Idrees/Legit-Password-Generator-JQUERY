@@ -107,7 +107,19 @@
               
                 // running the create password function to generate password and then displaying the value
                 
-               
+                console.log(pw_ingredients)
+                console.log(pw_length)
+
+              //-----------to here code is working fine
+
+               create_pw (pw_length, pw_ingredients)
+          
+              $("#msg_pw_type").modal('hide');
+              $("#pw_gen_page").modal('show');
+              // load_secondmodal()
+      
+            });
+
              
 
             
