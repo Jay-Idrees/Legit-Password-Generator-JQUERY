@@ -120,7 +120,25 @@
       
             });
 
-             
+           
+// Generate password function
+
+        function create_pw(pw_length, pw_ingredients){
+
+          var password=''
+
+          for (var i=0;i<pw_length;i++){
+
+          password += pw_ingredients.charAt(Math.floor(Math.random() * pw_ingredients.length));
+
+          console.log('The final passwod is: ',password)
+          $('#password').val(password)
+          } //br close loop
+          return password
+       
+
+        } //br-close create_pw function
+                 
 
             
 
