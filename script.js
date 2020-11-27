@@ -39,12 +39,16 @@
         var pw_symbol_checkbox=document.querySelector('#pw_symbol_checkbox');
         var pw_ingredients_bt=document.querySelector('#pw_ingredients_bt')
 
+
+
         
                                  // O U T P U T S    
 
          // Final password generator page: Generate button, Display textarea
          var pw_gen_bt=document.querySelector('#pw_gen_bt')
          var pw_display_area=document.querySelector("#password")
+         // For copying the password
+         var clipboard=document.querySelector('#clipboard')
 //=====================================================================
 
 // Variables for password ingredients
@@ -174,6 +178,8 @@
             }
 
     
+          
+         
           
         
 //Alternative for controling modals with a function
