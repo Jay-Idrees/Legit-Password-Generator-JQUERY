@@ -158,6 +158,25 @@
         });
 
 
+        clipboard.addEventListener('click', () => {
+          // console.log('click working')
+          const copy_password = pw_display_area.value;
+          // console.log(password)
+          
+          if(!copy_password) { return; }
+          
+          // pw_display_area.value = password;
+          // document.body.appendChild(pw_display_area);
+          pw_display_area.select();
+          document.execCommand('copy');
+          // alert("Your password has been copied")
+          // textarea.remove();
+          console.log(" The Password '", copy_password, "' has been copied to clipboard");
+          $("#clipboard").hide();
+          $("#msg_pw_copied").modal('show');
+
+        });  
+      
             
 
      // Linking range bar to the text box in welcome window
@@ -177,22 +196,7 @@
 
     
         
-            clipboard.addEventListener('click', () => {
-              // console.log('click working')
-              const copy_password = pw_display_area.value;
-              // console.log(password)
-              
-              if(!copy_password) { return; }
-              
-              // pw_display_area.value = password;
-              // document.body.appendChild(pw_display_area);
-              pw_display_area.select();
-              document.execCommand('copy');
-              alert("Your password has been copied")
-              // textarea.remove();
-              console.log(" The Password '", copy_password, "' has been copied to clipboard");
-            });  
-          
+         
         
 //Alternative for controling modals with a function
 
