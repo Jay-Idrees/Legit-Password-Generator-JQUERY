@@ -85,10 +85,9 @@
               var number='0123456789'
 
               var symbol='!@#$%^&*'
+              var pw_length=pw_length_box.value
 
-             
-
-            
+        
 
      // Link range bar to the text box in welcome window
 
