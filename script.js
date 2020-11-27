@@ -117,17 +117,29 @@
 
        
 
-              create_pw (pw_length, pw_ingredients)
-          
+        if (pw_ingredients===""){
+          $("#msg_pw_type").modal('hide');
+          $("#check_empty").modal('show');
+
+        } else{
+          create_pw(pw_length, pw_ingredients)
+
               $("#msg_pw_type").modal('hide');
               $("#pw_gen_page").modal('show');
-            
-      
-              // $("#empty_check").modal('show');
-             
+          
+        } //br close if/else statement
          
         
+            }); // br close for the pw_ingreadients_button click event
+
+// Added Functionality to bring the user back to the password ingredients/type modal page after the ok button is clicked in the empty option error alert
+            $("#to_pw_ingredients_msg").click(function(){
+              event.preventDefault();
+              $("#check_empty").modal('hide');
+              $("#msg_pw_type").modal('show');
+    
             });
+
 
            
 // Generate password function
@@ -156,8 +168,6 @@
         $("#pw_gen_bt").click(function(){
           event.preventDefault();
           $("#msg_pw_length").modal('show');
-          
-          // load_secondmodal()
 
         });
 
