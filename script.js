@@ -72,11 +72,13 @@
     
             });
    
-       // 
+       
             $("#pw_ingredients_bt").click(function(){
               event.preventDefault();
+              ('#password').empty
 
-              //  here ----------------------------
+       // Creating variables for the uppercase, lowercase, number and symbol variables for the password ingredients
+
               var abc_lower='abcdefghijklmnopqrstuvwxyz'
 
               var abc_upper='ABCDEFGHIJKLMNOPQRSTUVWXYZ'
@@ -84,6 +86,8 @@
               var number='0123456789'
 
               var symbol='!@#$%^&*'
+
+       // Capturing the password length from range-bar/text-box in the pw_length modal       
               var pw_length=pw_length_box.value
 
               var pw_ingredients='';
@@ -109,7 +113,7 @@
                 console.log(pw_ingredients)
                 console.log(pw_length)
 
-              //-----------to here code is working fine
+          
 
                create_pw (pw_length, pw_ingredients)
           
@@ -154,7 +158,7 @@
 
             
 
-     // Link range bar to the text box in welcome window
+     // Linking range bar to the text box in welcome window
 
 
     pw_length_bar.addEventListener('input', link );
@@ -170,6 +174,7 @@
             }
 
     
+          
         
 //Alternative for controling modals with a function
 
