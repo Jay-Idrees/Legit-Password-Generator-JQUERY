@@ -115,14 +115,18 @@
                 console.log(pw_ingredients)
                 console.log(pw_length)
 
-          
+       
 
-               create_pw (pw_length, pw_ingredients)
+              create_pw (pw_length, pw_ingredients)
           
               $("#msg_pw_type").modal('hide');
               $("#pw_gen_page").modal('show');
-              // load_secondmodal()
+            
       
+              // $("#empty_check").modal('show');
+             
+         
+        
             });
 
            
