@@ -139,14 +139,9 @@
               pw_length_box.value = value
             }
 
-            
-        // var bar_value=pw_length_bar.value
-        // pw_length_box.textContent=bar_value
-
-
+    
         
-
-            //Alternative for controling modals with a function
+//Alternative for controling modals with a function
 
                  // function load_secondmodal(){
         //   $('#msg_pw_length').modal('hide')
@@ -178,88 +173,6 @@
 
   
 
-
-
-$('#pw_gen_bt').click(function(e){
-
-  var pw_length=pw_length_box.value
-
-  var pw_ingredients='';
-
-  // Pouring lower case letters to ingredients variable
-  
-    (pw_lowercase_checkbox.checked) ? pw_ingredients +=abc_lower : '';
-  
-  //Pouring upper case letters to the ingredients variable
-  
-    (pw_capital_checkbox.checked) ? pw_ingredients +=abc_upper : '';
-  
-  // Pouring numbers to the ingredients variable
-  
-    (pw_number_checkbox.checked) ? pw_ingredients +=number : '';
-  
-    // pouring symbols to the ingredients variable
-  
-    (pw_symbol_checkbox.checked) ? pw_ingredients +=symbol :'';
-  
-    // running the create password function to generate password and then displaying the value
-
-     finalpw= create_pw(pw_length, pw_ingredients)
-     console.log('checking DOM variable value', pw_length)
-     console.log('final pw',finalpw)
-  
-  //  x= create_pw(pw_length, pw_ingredients)
-  //   console.log('pw value', x)
-
-    // pw_display_area.value 
-
-
-});
-
-
-
-
-
-
-
-
-       // Check whether the password is beteen 8 and 128 characters
-
-
-      //  // create random lower case letter
-      //       function get_rdm_lower(){
-      //       // 26 represents the english letters, 97 represents the number corresponding with lower case starting with 'a' returing a string
-      //       return String.fromCharCode(Math.floor(Math.random()*26)+97);
-            
-      //       }
-
-      //  // create random upper case letter
-      //      function  get_rdm_upper(){
-      //       // 26 represents the english letters, 65 represents the number corresponding with lower case starting with 'A' returing a string
-      //       return String.fromCharCode(Math.floor(Math.random()*26)+65);
-      //       }
-
-      //   // Create random number between 0 and 9
-      //       function  get_rdm_num(){
-      //       // Obtaining a random number between 0 and 9 from HTML characterset
-      //       return String.fromCharCode(Math.floor(Math.random()*10)+48);
-      //        }
-      //        console.log(create_rdm_num)
-
-      //   // Create special character
-      //       function get_rdm_symbol(){
-      //         return String.fromCharCode(Math.floor(Math.random()*10)+33);
-      //         // //Alternative 
-      //         // const symbols='!@#$%^&*(){}[]+<>/,.';
-      //         // return symbols[Math.floor(Math.random()*symbols.length)]
-      //        }
-
-      //   // Create password : 
-      //         create_pw(){
-      //           // get these randomly generated ingreadients for the password
-      //           // pack them into a body that is the size of length variable
-
-      //         }
 
 
       
