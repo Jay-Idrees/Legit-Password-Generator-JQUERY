@@ -9,6 +9,8 @@ Password criteria:
 
 [Link to the Legit password generator](https://jidrees.github.io/Legit-Password-Generator-JQUERY/)
 
+[Video Demo](https://youtu.be/7KRAyJFtxmc)
+
 
 ## Contact Programmer for questions
 
