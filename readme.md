@@ -45,7 +45,7 @@ As an employee with access to sensitive data I want to randomly generate a passw
 
 ![Bootstrap](https://img.shields.io/badge/Bootstrap-blueviolet?style=for-the-badge&logo=bootstrap)
 
-![Node](https://img.shields.io/badge/Node-green?style=for-the-badge&logo=Node.js)
+![CSS](https://img.shields.io/badge/css-darkgreen?style=for-the-badge&logo=css3)
 
 ![HTML](https://img.shields.io/badge/HTML-informational?style=for-the-badge&logo=html5)
 
@@ -53,8 +53,7 @@ As an employee with access to sensitive data I want to randomly generate a passw
 
 ![JQUERY](https://img.shields.io/badge/jquery-purple?style=for-the-badge&logo=jquery)
 
-![CSS](https://img.shields.io/badge/css-darkgreen?style=for-the-badge&logo=css3)
-
+![Node](https://img.shields.io/badge/Node-green?style=for-the-badge&logo=Node.js)
 
 
 
