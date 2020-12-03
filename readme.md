@@ -4,8 +4,8 @@
 This project is designed to create an application that an employee can use to generate a random password based on criteria they’ve selected. This app will run in the browser, and will feature dynamically updated HTML and CSS powered by JavaScript code. I developed this application during the second week of full-stack bootcap at Columbia University. Publication date 10/1/2020 <br />
 
 Password criteria:
--Between 8 and 128 characters
--The user will have options to include lowercase, uppercase, numbers and symbols
+- Between 8 and 128 characters
+- The user will have options to include lowercase, uppercase, numbers and symbols
 
 [Link to the Legit password generator](https://jidrees.github.io/Legit-Password-Generator-JQUERY/)
 
