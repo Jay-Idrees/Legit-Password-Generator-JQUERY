@@ -12,7 +12,7 @@ Password criteria:
 
 ## Contact Programmer for questions
 
-<br />
+
 Full-Stack Software Engineer<br />
 [JIDREES](https://github.com/jidrees) ![Github](http://img.shields.io/badge/github-black?style=flat&logo=github)<br />
 jidrees@live.com
