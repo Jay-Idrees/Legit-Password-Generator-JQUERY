@@ -7,7 +7,7 @@ Password criteria:
 - Between 8 and 128 characters
 - The user will have options to include lowercase, uppercase, numbers and symbols
 
-[Link to the Legit password generator](https://jidrees.github.io/Legit-Password-Generator-JQUERY/)
+[Link to the Legit password generator](https://jay-idrees.github.io/Legit-Password-Generator-JQUERY/)
 
 [Video Demo](https://youtu.be/7KRAyJFtxmc)
 
@@ -73,7 +73,7 @@ This project demonstrates command over the following programing skills:
 
 - Using Bootstrap as frontend frame work to design a mobile responsive webpage
 
-- Using Modals for alerts an capturing user input data
+- Using Modals for prompting alerts and capturing user input data
 
 - Linking JQuery 
 
@@ -81,7 +81,7 @@ This project demonstrates command over the following programing skills:
 
 - Concatingion of strings into a variable
 
-- Adding feature to copy password
+- Adding a feature to copy password
 
 - Using the show/hide properties for display modals on demand
 
@@ -102,7 +102,7 @@ No specific requirements
 
 ## Usage
 
-Please visit the link (https://jidrees.github.io/Legit-Password-Generator-JQUERY/)
+Please visit the link (https://Jay-Idrees.github.io/Legit-Password-Generator-JQUERY/)
 
 
 ## Testing
