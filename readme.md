@@ -16,8 +16,9 @@ Password criteria:
 
 Jay J. Idrees, MD, MPH <br />
 Full-Stack Software Engineer<br />
-[JIDREES](https://github.com/jidrees) ![Github](http://img.shields.io/badge/github-black?style=flat&logo=github)<br />
-jidrees@live.com
+[JIDREES](https://github.com/Jay-Idrees) ![Github](http://img.shields.io/badge/github-black?style=flat&logo=github)<br />
+
+E-mail: Dr.Idrees@MedicalMarijuana.Expert
 
 
 
