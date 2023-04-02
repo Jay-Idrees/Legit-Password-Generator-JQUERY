@@ -1,7 +1,7 @@
 # Legit Password Generator
 
 ## About the Project
-This project is designed to create an application that an employee can use to generate a random password based on criteria they’ve selected. This app will run in the browser, and will feature dynamically updated HTML and CSS powered by JavaScript code. I developed this application during the second week of full-stack bootcap at Columbia University. Publication date 10/1/2020 <br />
+This project is designed to create an application that an employee can use to generate a random password based on criteria they’ve selected. This app will run in the browser, and will feature dynamically updated HTML and CSS powered by JavaScript code. I developed this application during the second week of Full-Stack Software Developement at Columbia University. Publication date 10/1/2020 <br />
 
 Password criteria:
 - Between 8 and 128 characters
